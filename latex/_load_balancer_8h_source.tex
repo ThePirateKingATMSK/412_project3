@@ -1,0 +1,43 @@
+\doxysection{Load\+Balancer.\+h}
+\hypertarget{_load_balancer_8h_source}{}\label{_load_balancer_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Server.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Request.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_load_balancer}{LoadBalancer}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ queue<Request>\ \mbox{\hyperlink{class_load_balancer_a615bae2d6a1e48d5f4e3de93e5c3ef73}{requestQueue}};\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ vector<Server>\ \mbox{\hyperlink{class_load_balancer_a1c42b8eb6167de6dd9486d946bbf78f4}{serverList}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_aaf170dd570e712316397906786f30400}{cyclesLeft}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_acaa0f5fe812ec75c7d177c0fb8b181fc}{numServers}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_ad20412f28ad82e72a35dc817ced14cc9}{queueCapacity}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a7ee50bb5e2f30a9e570056e61d9bd469}{numRejections}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_adc86d6d1945ec57f4aafb45f60c4215e}{serverIdCounter}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a403697948b48b6b216ec84cad8cd4a28}{requestsProcessed}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ set<string>\ \mbox{\hyperlink{class_load_balancer_ad90308614f4eec42f76bff3d44dc877c}{blockedIpRanges}};\ \ \ \ \ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_load_balancer_affc9dc4c283d20bacc85a66cb721fd19}{LoadBalancer}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_acaa0f5fe812ec75c7d177c0fb8b181fc}{numServers}},\ \textcolor{keywordtype}{int}\ timeLeft);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_a532755d49338c513ec2f12fd220fb696}{logMessage}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ message);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_aae1b98bfd3cf3f73b32d2aed9b7e6523}{RunSimulation}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_a44135a3d8b7975caad3a57abad558b50}{BlockIpRange}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ ipRange);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_load_balancer_adfd847a1159112ff600cb3bb62db3073}{IsBlocked}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ ip);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_ac6e2e49d202bfc5fa5d83fbf94d704a5}{ProcessRequests}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_a5a04abd7ff13e492f6828312b8db25b8}{AssignRequestsToServers}}();}
+\DoxyCodeLine{00069\ \};}
+
+\end{DoxyCode}

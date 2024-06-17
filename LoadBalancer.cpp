@@ -2,8 +2,11 @@
 
 #include "LoadBalancer.h"
 
-// FULLY WORKING
-
+/**
+ * @brief Constructor for the LoadBalancer class.
+ * @param numServers The number of servers in the load balancer.
+ * @param cyclesLeft The total number of cycles for the simulation.
+ */
 LoadBalancer::LoadBalancer(int numServers, int cyclesLeft) {
     freopen("logfile.txt", "w", stdout);
 
@@ -17,10 +20,17 @@ LoadBalancer::LoadBalancer(int numServers, int cyclesLeft) {
     this->serverList = vector<Server>();
 }
 
+/**
+ * @brief Logs a message to the log file.
+ * @param message The message to log.
+ */
 void LoadBalancer::logMessage(const string& message) {
     cout << "[" << cyclesLeft << "] " << message << endl;
 }
 
+/**
+ * @brief Processes incoming requests.
+ */
 void LoadBalancer::ProcessRequests() {
     int numNewRequests = rand() % 5 + 1;
     logMessage("Received " + to_string(numNewRequests) + " new requests");
@@ -37,6 +47,9 @@ void LoadBalancer::ProcessRequests() {
     }
 }
 
+/**
+ * @brief Assigns requests to available servers.
+ */
 void LoadBalancer::AssignRequestsToServers() {
     // Check if each server is active and then add requests to them if possible
     for (int i = 0; i < this->serverList.size(); i++) {
@@ -67,6 +80,9 @@ void LoadBalancer::AssignRequestsToServers() {
     }
 }
 
+/**
+ * @brief Runs the load balancer simulation.
+ */
 void LoadBalancer::RunSimulation() {
     cout << "<============= BEGIN LOAD BALANCER ================>" << endl;
 
@@ -93,8 +109,8 @@ void LoadBalancer::RunSimulation() {
             logMessage("Server " + to_string(ws.serverId) + " has been added.");
         }
 
-        // Scale down if we're using less than half of our queue's capacity
-        else if (this->requestQueue.size() <= this->queueCapacity / 2 && !this->requestQueue.size() > numServers) {
+        // Scale down 
+        else if (this->requestQueue.size() <= this->queueCapacity - 10 && !this->requestQueue.size() > numServers) {
             logMessage("Server " + to_string(this->serverList.back().serverId) + " has been removed.");
             this->serverList.pop_back();
         }

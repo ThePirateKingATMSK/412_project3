@@ -1,0 +1,145 @@
+\doxysection{Load\+Balancer Class Reference}
+\hypertarget{class_load_balancer}{}\label{class_load_balancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Simulates a load balancer for handling web requests.  
+
+
+
+
+{\ttfamily \#include $<$Load\+Balancer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_load_balancer_affc9dc4c283d20bacc85a66cb721fd19}{Load\+Balancer}} (int \mbox{\hyperlink{class_load_balancer_acaa0f5fe812ec75c7d177c0fb8b181fc}{num\+Servers}}, int time\+Left)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_load_balancer}{Load\+Balancer} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_a532755d49338c513ec2f12fd220fb696}{log\+Message}} (const string \&message)
+\begin{DoxyCompactList}\small\item\em Logs a message to the log file. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_aae1b98bfd3cf3f73b32d2aed9b7e6523}\label{class_load_balancer_aae1b98bfd3cf3f73b32d2aed9b7e6523} 
+void {\bfseries Run\+Simulation} ()
+\begin{DoxyCompactList}\small\item\em Runs the load balancer simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_a44135a3d8b7975caad3a57abad558b50}{Block\+Ip\+Range}} (const string \&ip\+Range)
+\begin{DoxyCompactList}\small\item\em Blocks a specific IP range. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_load_balancer_adfd847a1159112ff600cb3bb62db3073}{Is\+Blocked}} (const string \&ip)
+\begin{DoxyCompactList}\small\item\em Checks if an IP address is blocked. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_ac6e2e49d202bfc5fa5d83fbf94d704a5}\label{class_load_balancer_ac6e2e49d202bfc5fa5d83fbf94d704a5} 
+void {\bfseries Process\+Requests} ()
+\begin{DoxyCompactList}\small\item\em Processes incoming requests. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_a5a04abd7ff13e492f6828312b8db25b8}\label{class_load_balancer_a5a04abd7ff13e492f6828312b8db25b8} 
+void {\bfseries Assign\+Requests\+To\+Servers} ()
+\begin{DoxyCompactList}\small\item\em Assigns requests to available servers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_load_balancer_a615bae2d6a1e48d5f4e3de93e5c3ef73}\label{class_load_balancer_a615bae2d6a1e48d5f4e3de93e5c3ef73} 
+queue$<$ \mbox{\hyperlink{class_request}{Request}} $>$ {\bfseries request\+Queue}
+\begin{DoxyCompactList}\small\item\em Queue of incoming requests. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_a1c42b8eb6167de6dd9486d946bbf78f4}\label{class_load_balancer_a1c42b8eb6167de6dd9486d946bbf78f4} 
+vector$<$ \mbox{\hyperlink{class_server}{Server}} $>$ {\bfseries server\+List}
+\begin{DoxyCompactList}\small\item\em List of servers. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_aaf170dd570e712316397906786f30400}\label{class_load_balancer_aaf170dd570e712316397906786f30400} 
+int {\bfseries cycles\+Left}
+\begin{DoxyCompactList}\small\item\em Number of cycles left for the simulation. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_acaa0f5fe812ec75c7d177c0fb8b181fc}\label{class_load_balancer_acaa0f5fe812ec75c7d177c0fb8b181fc} 
+int {\bfseries num\+Servers}
+\begin{DoxyCompactList}\small\item\em Number of servers. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_ad20412f28ad82e72a35dc817ced14cc9}\label{class_load_balancer_ad20412f28ad82e72a35dc817ced14cc9} 
+int {\bfseries queue\+Capacity}
+\begin{DoxyCompactList}\small\item\em Maximum capacity of the request queue. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_a7ee50bb5e2f30a9e570056e61d9bd469}\label{class_load_balancer_a7ee50bb5e2f30a9e570056e61d9bd469} 
+int {\bfseries num\+Rejections}
+\begin{DoxyCompactList}\small\item\em Number of rejected requests. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_adc86d6d1945ec57f4aafb45f60c4215e}\label{class_load_balancer_adc86d6d1945ec57f4aafb45f60c4215e} 
+int {\bfseries server\+Id\+Counter}
+\begin{DoxyCompactList}\small\item\em Counter for assigning server IDs. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_a403697948b48b6b216ec84cad8cd4a28}\label{class_load_balancer_a403697948b48b6b216ec84cad8cd4a28} 
+int {\bfseries requests\+Processed}
+\begin{DoxyCompactList}\small\item\em Number of processed requests. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_ad90308614f4eec42f76bff3d44dc877c}\label{class_load_balancer_ad90308614f4eec42f76bff3d44dc877c} 
+set$<$ string $>$ {\bfseries blocked\+Ip\+Ranges}
+\begin{DoxyCompactList}\small\item\em Set of blocked IP ranges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simulates a load balancer for handling web requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_load_balancer_affc9dc4c283d20bacc85a66cb721fd19}\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily \label{class_load_balancer_affc9dc4c283d20bacc85a66cb721fd19} 
+Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{int}]{num\+Servers}{, }\item[{int}]{cycles\+Left}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_load_balancer}{Load\+Balancer} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Servers} & The number of servers in the load balancer. \\
+\hline
+{\em time\+Left} & The total number of cycles for the simulation.\\
+\hline
+{\em num\+Servers} & The number of servers in the load balancer. \\
+\hline
+{\em cycles\+Left} & The total number of cycles for the simulation. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_load_balancer_a44135a3d8b7975caad3a57abad558b50}\index{LoadBalancer@{LoadBalancer}!BlockIpRange@{BlockIpRange}}
+\index{BlockIpRange@{BlockIpRange}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{BlockIpRange()}{BlockIpRange()}}
+{\footnotesize\ttfamily \label{class_load_balancer_a44135a3d8b7975caad3a57abad558b50} 
+void Load\+Balancer\+::\+Block\+Ip\+Range (\begin{DoxyParamCaption}\item[{const string \&}]{ip\+Range}{}\end{DoxyParamCaption})}
+
+
+
+Blocks a specific IP range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip\+Range} & The IP range to block. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_load_balancer_adfd847a1159112ff600cb3bb62db3073}\index{LoadBalancer@{LoadBalancer}!IsBlocked@{IsBlocked}}
+\index{IsBlocked@{IsBlocked}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{IsBlocked()}{IsBlocked()}}
+{\footnotesize\ttfamily \label{class_load_balancer_adfd847a1159112ff600cb3bb62db3073} 
+bool Load\+Balancer\+::\+Is\+Blocked (\begin{DoxyParamCaption}\item[{const string \&}]{ip}{}\end{DoxyParamCaption})}
+
+
+
+Checks if an IP address is blocked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & The IP address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the IP is blocked, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_load_balancer_a532755d49338c513ec2f12fd220fb696}\index{LoadBalancer@{LoadBalancer}!logMessage@{logMessage}}
+\index{logMessage@{logMessage}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{logMessage()}{logMessage()}}
+{\footnotesize\ttfamily \label{class_load_balancer_a532755d49338c513ec2f12fd220fb696} 
+void Load\+Balancer\+::log\+Message (\begin{DoxyParamCaption}\item[{const string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Logs a message to the log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to log. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Load\+Balancer.\+h\item 
+Load\+Balancer.\+cpp\end{DoxyCompactItemize}

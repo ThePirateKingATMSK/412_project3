@@ -1,5 +1,8 @@
 #include "Request.h"
 
+/**
+ * @brief Constructor for the Request class.
+ */
 Request::Request() {
     this->ip = this->GenerateRandomIp();
     this->requestTime = (30 + rand()) % 50;
@@ -8,6 +11,10 @@ Request::Request() {
     }
 }
 
+/**
+ * @brief Generates a random IP address.
+ * @return A string representing the generated IP address.
+ */
 string Request::GenerateRandomIp() {
     int octet1 = rand() % 255;
     int octet2 = rand() % 255;
